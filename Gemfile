@@ -41,9 +41,11 @@ gem 'bootstrap-sass'
 gem 'devise'
 gem 'figaro'
 gem 'haml-rails'
-gem 'libv8'
+gem 'libv8', '~> 3.11.8'
 gem 'mysql2'
 gem 'simple_form'
+gem "less-rails"
+gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 
 group :assets do
   gem 'therubyracer', :platform=>:ruby, :require=>"v8"
@@ -55,6 +57,7 @@ group :development do
   gem 'html2haml'
   gem 'hub', :require=>nil
   gem 'quiet_assets'
+  gem 'debugger'
 end
 
 group :development, :test do

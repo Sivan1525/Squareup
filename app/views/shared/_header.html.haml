@@ -1,0 +1,29 @@
+%section.inverted-section.nav-drawer
+  #signin.prose.signin-section.drawer-content
+    %a.close-drawer{:href => "javascript:void(0);"} Close
+    %h2.title Sign In
+    = simple_form_for(resource, :as => resource_name, :url => session_path(resource_name),:html=>{:class => "signin-form"}) do |f| 
+      .field.email-field.fade-label
+        = f.input :email,:label => false,:id => "email",:class =>"text",:input_html=>{:size => "17"}, wrapper: false,label_html: { class: 'text' }, placeholder: 'Email address'
+      .field.password-field
+        = f.input :password, :label => false,:id => "password",:class =>"text",:input_html=>{:size => "17"}, wrapper: false,label_html: { class: 'text' }, placeholder: 'Password'
+      .footer
+        = f.button :submit, "Sign in" ,:class => "button primary-button track-event"
+    %p.account-actions
+      %a{:href => "https://squareup.com/password"} Forgot password?
+.header-wrapper
+  %header.main-header.main-header-home
+    %nav.header-nav
+      %span.home-link
+        = image_tag("square_logo.png",:class => "logo")
+      .actions
+        %a.button.small-button.signin-button{:href => "javascript:void(0);"} Sign In
+      %ul.product-nav.nav-list
+        %li.register-nav-item
+          %a#register-nav-link.nav-link{:href => new_user_registration_path}
+            %i.navigation-icon-register.nav-icon
+            %strong Square Register
+        %li.wallet-nav-item
+          %a#cards-nav-link.nav-link{:href => "javascript:void(0);"}
+            %i.navigation-icon-cards.nav-icon
+            %strong Square Wallet
